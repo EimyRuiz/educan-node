@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="bg-educan-beige auth-body">
+  <!-- Navbar traslúcido -->
+  <%- include('../partials/navbar') %>
+
+  <main class="auth-wrapper d-flex align-items-center justify-content-center py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-5">
+          <!-- Tarjeta de Login Glassmorphism -->
+          <div class="auth-card p-4 p-sm-5 shadow-lg">
+            <div class="text-center mb-4">
+              <div class="auth-icon-badge mb-3 mx-auto">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <h2 class="auth-title fw-bold">Iniciar Sesión</h2>
+              <p class="text-muted small">Ingresa tus credenciales para acceder a EDUCAN</p>
+            </div>
+
+            <!-- Alertas de error/éxito -->
+            <%- include('../partials/alerts') %>
+
+            <!-- Formulario -->
+            <form action="/auth/login" method="POST" class="needs-validation" novalidate id="loginForm">
+              <!-- Email -->
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control auth-input" id="email" name="email" placeholder="nombre@correo.com" required autocomplete="email">
+                <label for="email"><i class="bi bi-envelope me-2"></i>Correo electrónico</label>
+                <div class="invalid-feedback">Por favor introduce un correo válido.</div>
+              </div>
+
+              <!-- Contraseña -->
+              <div class="form-floating mb-3 position-relative">
+                <input type="password" class="form-control auth-input" id="password" name="password" placeholder="Contraseña" required autocomplete="current-password">
+                <label for="password"><i class="bi bi-lock me-2"></i>Contraseña</label>
+                <div class="invalid-feedback">Por favor introduce tu contraseña.</div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rememberMe">
+                  <label class="form-check-label text-muted small" for="rememberMe">Recordarme</label>
+                </div>
+                <a href="/contacto" class="small text-educan-olive text-decoration-none">¿Olvidaste tu contraseña?</a>
+              </div>
+
+              <!-- Botón Submit -->
+              <button type="submit" class="btn btn-educan-primary w-100 py-3 mb-3">
+                <i class="bi bi-box-arrow-in-right me-2"></i> Iniciar Sesión
+              </button>
+
+              <div class="text-center">
+                <span class="text-muted small">¿Aún no tienes una cuenta? </span>
+                <a href="/auth/register" class="small fw-bold text-educan-olive text-decoration-none">
+                  Regístrate aquí
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

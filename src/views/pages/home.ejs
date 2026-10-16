@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="bg-educan-beige">
+  <!-- Navbar traslúcido -->
+  <%- include('../partials/navbar') %>
+
+  <!-- HERO SECTION -->
+  <header class="hero-section position-relative d-flex align-items-center">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center text-white py-5">
+      <span class="hero-badge mb-3 animate-fade-in">
+        <i class="bi bi-patch-check-fill me-2"></i> Adiestramiento Positivo y Científico
+      </span>
+      <h1 class="hero-title display-3 fw-bold mb-4">
+        Transforma el vínculo con tu perro hacia una convivencia feliz
+      </h1>
+      <p class="hero-subtitle lead mx-auto mb-5 text-light">
+        Educación canina moderna sin castigos. Conectamos a familias con etólogos y adiestradores certificados para un desarrollo equilibrado y saludable.
+      </p>
+
+      <!-- Botones Hero con efecto hover solicitado -->
+      <div class="d-flex flex-wrap justify-content-center gap-3 hero-actions">
+        <a href="/servicios" class="btn btn-hero-primary">
+          <i class="bi bi-calendar-check me-2"></i> Agendar entrenamiento
+        </a>
+        <a href="/servicios" class="btn btn-hero-secondary">
+          <i class="bi bi-compass me-2"></i> Conocer servicios
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- EFECTO TYPING DINÁMICO DEBAJO DEL HERO -->
+  <section class="typing-banner py-4">
+    <div class="container text-center">
+      <div class="typing-container d-inline-flex align-items-center justify-content-center flex-wrap gap-2">
+        <span class="typing-prefix"><i class="bi bi-stars text-educan-olive me-1"></i> Especialistas en:</span>
+        <span class="typing-text fw-bold text-educan-dark" id="typingElement"></span>
+        <span class="typing-cursor">|</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 TARJETAS DESTACADAS SUPERPUESTAS AL HERO CON SCROLL-REVEAL -->
+  <section class="featured-cards-section position-relative">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <!-- Tarjeta 1 -->
+        <div class="col-lg-3 col-md-6 scroll-reveal">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon-wrapper mb-3">
+              <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+            <h4 class="feature-title">Refuerzo Positivo</h4>
+            <p class="feature-desc mb-0">
+              Metodología basada en la confianza y la motivación, eliminando el estrés y el miedo en el aprendizaje.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-lg-3 col-md-6 scroll-reveal">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon-wrapper mb-3">
+              <i class="bi bi-award-fill"></i>
+            </div>
+            <h4 class="feature-title">Entrenadores Certificados</h4>
+            <p class="feature-desc mb-0">
+              Profesionales titulados en etología y psicología canina con amplia experiencia práctica y pedagógica.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col-lg-3 col-md-6 scroll-reveal">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon-wrapper mb-3">
+              <i class="bi bi-sliders"></i>
+            </div>
+            <h4 class="feature-title">Planes a Medida</h4>
+            <p class="feature-desc mb-0">
+              Evaluamos las necesidades singulares de cada perro y su entorno familiar para resultados efectivos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="col-lg-3 col-md-6 scroll-reveal">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon-wrapper mb-3">
+              <i class="bi bi-bag-check-fill"></i>
+            </div>
+            <h4 class="feature-title">Tienda Especializada</h4>
+            <p class="feature-desc mb-0">
+              Productos y herramientas de entrenamiento ergonómicas rigurosamente aprobados por nuestros expertos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: SOBRE EDUCAN (IMAGEN INTERACTIVA HOVER + ESTADÍSTICAS) -->
+  <section class="about-section py-6 my-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Columna Imagen interactiva que cambia al hover -->
+        <div class="col-lg-6">
+          <div class="about-image-card shadow-lg position-relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80" 
+                 alt="Perro feliz entrenando en el parque" 
+                 class="img-fluid about-img about-img-default">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=900&q=80" 
+                 alt="Entrenador canino profesional con perro" 
+                 class="img-fluid about-img about-img-hover">
+            <div class="about-img-badge">
+              <i class="bi bi-shield-shaded me-1"></i> Garantía de bienestar
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Texto y Estadísticas -->
+        <div class="col-lg-6">
+          <span class="section-tag mb-2 d-inline-block">Sobre EDUCAN</span>
+          <h2 class="section-heading mb-4">
+            Construyendo entendimiento mutuo entre humanos y perros
+          </h2>
+          <p class="text-secondary mb-4">
+            Nacimos con la convicción de que cada perro merece una educación respetuosa y comprensiva. Dejamos atrás técnicas aversivas para brindar un enfoque científico que potencia la inteligencia, autocontrol y equilibrio emocional de tu compañero.
+          </p>
+
+          <!-- Bloque de estadísticas solicitado (+500, +8, 98%) -->
+          <div class="row g-3 stats-container mt-2">
+            <div class="col-4">
+              <div class="stat-box p-3 text-center">
+                <span class="stat-number">+500</span>
+                <span class="stat-label d-block text-muted small">Perros graduados con éxito</span>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-box p-3 text-center">
+                <span class="stat-number">+8</span>
+                <span class="stat-label d-block text-muted small">Años liderando adiestramiento</span>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-box p-3 text-center">
+                <span class="stat-number">98%</span>
+                <span class="stat-label d-block text-muted small">Familias satisfechas y felices</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-2">
+            <a href="/nosotros" class="btn btn-educan-dark">
+              Saber más de nuestra metodología <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: NUESTROS SERVICIOS (TARJETAS CON OVERLAY CSS AL HOVER) -->
+  <section class="services-section py-6 bg-educan-secondary">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-tag mb-2 d-inline-block">Nuestros Servicios</span>
+        <h2 class="section-heading">Programas diseñados para cada etapa y necesidad</h2>
+        <p class="text-secondary">Pasa el cursor sobre cada programa para descubrir el detalle de cada sesión formativa.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Servicio 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card-interactive position-relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&w=700&q=80" 
+                 alt="Educación para cachorros" 
+                 class="service-img w-100">
+            <div class="service-card-default-info p-4">
+              <span class="badge bg-educan-olive mb-2">Edad: 2 a 6 meses</span>
+              <h4 class="service-card-title text-white mb-0">Kinder Canino (Cachorros)</h4>
+            </div>
+            <!-- Overlay CSS con revelado al hover -->
+            <div class="service-hover-overlay p-4 d-flex flex-column justify-content-center">
+              <span class="badge bg-educan-olive align-self-start mb-2">Educación Temprana</span>
+              <h4 class="text-white fw-bold mb-2">Kinder Canino (Cachorros)</h4>
+              <p class="text-light small mb-3">
+                Socialización segura, prevención de miedos, hábitos higiénicos en el hogar y primeros comandos básicos sin frustración.
+              </p>
+              <a href="/servicios" class="btn btn-sm btn-educan-primary align-self-start">
+                Ver detalles <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card-interactive position-relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=700&q=80" 
+                 alt="Modificación de Conducta" 
+                 class="service-img w-100">
+            <div class="service-card-default-info p-4">
+              <span class="badge bg-educan-olive mb-2">Etología Clínica</span>
+              <h4 class="service-card-title text-white mb-0">Modificación de Conducta</h4>
+            </div>
+            <!-- Overlay CSS con revelado al hover -->
+            <div class="service-hover-overlay p-4 d-flex flex-column justify-content-center">
+              <span class="badge bg-educan-olive align-self-start mb-2">Terapia Conductual</span>
+              <h4 class="text-white fw-bold mb-2">Modificación de Conducta</h4>
+              <p class="text-light small mb-3">
+                Tratamiento especializado para reactividad con correa, agresividad, miedos, fobias a ruidos y ansiedad por separación.
+              </p>
+              <a href="/servicios" class="btn btn-sm btn-educan-primary align-self-start">
+                Ver detalles <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card-interactive position-relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=700&q=80" 
+                 alt="Obediencia Urbana y Paseos" 
+                 class="service-img w-100">
+            <div class="service-card-default-info p-4">
+              <span class="badge bg-educan-olive mb-2">Paseo Relajado</span>
+              <h4 class="service-card-title text-white mb-0">Obediencia y Paseo Urbano</h4>
+            </div>
+            <!-- Overlay CSS con revelado al hover -->
+            <div class="service-hover-overlay p-4 d-flex flex-column justify-content-center">
+              <span class="badge bg-educan-olive align-self-start mb-2">Vida Cotidiana</span>
+              <h4 class="text-white fw-bold mb-2">Obediencia y Paseo Urbano</h4>
+              <p class="text-light small mb-3">
+                Caminar sin tirones, llamado de emergencia infalible, autocontrol frente a estímulos y convivencia perfecta en terrazas o parques.
+              </p>
+              <a href="/servicios" class="btn btn-sm btn-educan-primary align-self-start">
+                Ver detalles <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CALL TO ACTION -->
+  <section class="cta-section py-6 text-white text-center">
+    <div class="container">
+      <div class="cta-box p-5 mx-auto">
+        <h2 class="display-6 fw-bold mb-3">¿Listo para comenzar la mejor etapa con tu perro?</h2>
+        <p class="lead text-light mb-4">
+          Crea tu cuenta gratis hoy mismo y agenda tu primera evaluación con uno de nuestros adiestradores expertos.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="/auth/register" class="btn btn-educan-primary btn-lg">
+            Crear cuenta gratuita
+          </a>
+          <a href="/contacto" class="btn btn-glass-white btn-lg">
+            Hablar con un asesor
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <%- include('../partials/footer') %>
+</body>
+</html>

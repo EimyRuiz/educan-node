@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="bg-educan-beige">
+  <%- include('../partials/navbar') %>
+
+  <main class="py-5 mt-5">
+    <div class="container py-5 text-center">
+      <div class="glass-card p-5 mx-auto max-w-700 shadow-sm">
+        <span class="badge bg-educan-olive mb-3 px-3 py-2">EDUCAN • <%= pageName %></span>
+        <h1 class="display-5 fw-bold mb-3 text-educan-dark"><%= pageName %></h1>
+        <p class="lead text-secondary mb-4"><%= description %></p>
+        <div class="p-4 bg-white rounded-4 border mb-4">
+          <i class="bi bi-tools text-educan-olive fs-1 mb-2 d-block"></i>
+          <p class="text-muted mb-0">Esta sección multipágina está lista en el enrutamiento para seguir expandiendo el contenido detallado de <%= pageName %>.</p>
+        </div>
+        <a href="/" class="btn btn-educan-primary">
+          <i class="bi bi-arrow-left me-1"></i> Volver al Inicio
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

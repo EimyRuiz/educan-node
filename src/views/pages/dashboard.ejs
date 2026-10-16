@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="bg-educan-beige">
+  <%- include('../partials/navbar') %>
+
+  <main class="dashboard-wrapper py-5 mt-5">
+    <div class="container py-4">
+      <%- include('../partials/alerts') %>
+
+      <!-- Cabecera de bienvenida -->
+      <div class="dashboard-header p-4 p-md-5 mb-4 shadow-sm">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <span class="badge bg-educan-olive mb-2"><i class="bi bi-shield-check me-1"></i> Sesión Activa</span>
+            <h1 class="display-6 fw-bold mb-2">¡Hola, <%= user.name %>!</h1>
+            <p class="text-secondary lead mb-0">
+              Bienvenido a tu panel de control como <strong class="text-educan-olive"><%= user.role %></strong>.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a href="/auth/logout" class="btn btn-outline-danger btn-sm">
+              <i class="bi bi-box-arrow-right me-1"></i> Cerrar Sesión
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vistas específicas y modulares según el Rol -->
+      <% if (user.role === 'Cliente') { %>
+        <!-- Panel del Cliente -->
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-calendar-heart text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Mis Clases</h5>
+              </div>
+              <p class="text-muted small">Tienes 1 sesión programada para este sábado con tu adiestrador.</p>
+              <a href="/servicios" class="btn btn-sm btn-educan-primary mt-auto">Ver calendario</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-journal-check text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Progreso Canino</h5>
+              </div>
+              <p class="text-muted small">Avance del módulo: Obediencia básica (80% completado).</p>
+              <a href="/servicios" class="btn btn-sm btn-outline-secondary mt-auto">Ver avances</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-bag-heart text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Mis Pedidos</h5>
+              </div>
+              <p class="text-muted small">Revisa tus compras de premios y correas ergonómicas.</p>
+              <a href="/tienda" class="btn btn-sm btn-outline-secondary mt-auto">Ir a la tienda</a>
+            </div>
+          </div>
+        </div>
+
+      <% } else if (user.role === 'Adiestrador') { %>
+        <!-- Panel del Adiestrador -->
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-people-fill text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Mis Alumnos Caninos</h5>
+              </div>
+              <p class="text-muted small">8 clientes activos en programas de modificación conductual.</p>
+              <a href="#" class="btn btn-sm btn-educan-primary mt-auto">Gestionar alumnos</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-clock-history text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Agenda Semanal</h5>
+              </div>
+              <p class="text-muted small">12 horas de sesiones prácticas reservadas para esta semana.</p>
+              <a href="#" class="btn btn-sm btn-outline-secondary mt-auto">Ver agenda</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-file-earmark-text text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Informes de Evolución</h5>
+              </div>
+              <p class="text-muted small">3 diagnósticos pendientes de entrega.</p>
+              <a href="#" class="btn btn-sm btn-outline-secondary mt-auto">Crear informe</a>
+            </div>
+          </div>
+        </div>
+
+      <% } else if (user.role === 'Administrador') { %>
+        <!-- Panel del Administrador -->
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-people text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Gestión de Usuarios</h5>
+              </div>
+              <p class="text-muted small">Control de clientes, adiestradores y permisos globales.</p>
+              <a href="#" class="btn btn-sm btn-educan-primary mt-auto">Administrar usuarios</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-cart-check text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Ventas y Tienda</h5>
+              </div>
+              <p class="text-muted small">Estadísticas de facturación, catálogo y stock disponible.</p>
+              <a href="#" class="btn btn-sm btn-outline-secondary mt-auto">Ver métricas</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card educan-dashboard-card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="dash-icon"><i class="bi bi-gear-fill text-educan-olive"></i></div>
+                <h5 class="mb-0 fw-bold">Configuración</h5>
+              </div>
+              <p class="text-muted small">Ajustes generales de la plataforma y pasarelas de pago.</p>
+              <a href="#" class="btn btn-sm btn-outline-secondary mt-auto">Ajustes</a>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

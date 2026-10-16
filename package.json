@@ -1,0 +1,30 @@
+{
+  "name": "educan-node",
+  "version": "1.0.0",
+  "description": "EDUCAN - Plataforma profesional de adiestramiento canino",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "educan",
+    "dog-training",
+    "express",
+    "ejs",
+    "bootstrap"
+  ],
+  "author": "EDUCAN Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^7.0.1",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
